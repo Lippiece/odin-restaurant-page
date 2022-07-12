@@ -1,0 +1,20 @@
+{
+	"configurations": [
+		{
+			// debug with chrome
+			"type": "chrome",
+			"request": "launch",
+			"name": "Chrome",
+			"url": "http://localhost:3000/${relativeFileDirname}/index.html",
+		},
+		{
+			"name": "Launch Node",
+			"program": "${file}",
+			"request": "launch",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "node"
+		}
+	]
+}

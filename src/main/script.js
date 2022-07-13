@@ -38,4 +38,9 @@ function makeInitialElements()
 		para,
 	];
 }
-document.body.append( header() );
+const elements = makeInitialElements(),
+	image  = makeImage(),
+	button = makeButton(),
+	theRest = makeInitialElements();
+
+content.append(  button,image, theRest[0], theRest[1] );

@@ -16,10 +16,14 @@ function makeImage()
 
 	return imageWrapper;
 }
+function makeButton()
 {
-	const head = document.createElement( "h1" );
+	const button = document.createElement( "button" );
 
-	head.textContent = "G'day";
+	button.textContent = "Tab1";
+
+	return button;
+}
 
 	return head;
 }

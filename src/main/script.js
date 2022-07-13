@@ -24,7 +24,18 @@ function makeButton()
 
 	return button;
 }
+function makeInitialElements()
+{
+	// Image, headline para about the restaurant
+	const para = document.createElement( "p" ),
+		headline = document.createElement( "h1" );
 
-	return head;
+	para.textContent     = "The pain itself is pain, it loves the main adipisicing process. As there is no such thing as none of our present, nor do we foresee the pain of the inventor, and for a similar reason, we are obliged to deem it. I'll explain it by flattering myself but not too harsh.";
+	headline.textContent = "The Phylosophy Ingredient";
+
+	return [
+		headline,
+		para,
+	];
 }
 document.body.append( header() );

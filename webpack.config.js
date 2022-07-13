@@ -4,13 +4,12 @@ import glob from "glob";
 import HtmlWebpackPlugin from  "html-webpack-plugin" ;
 
 export default {
-	mode     : "development",
 	entry    : glob.sync( "./src/**/*.js" ),
 	devtool  : "eval",
 	devServer: { static: "./dist" },
 	plugins  : [
 		new HtmlWebpackPlugin( {
-			title          : "Restaurant You'll Never Visit",
+			title          : "The Phylosophy Ingredient",
 			templateContent: `
     <html>
       <body>
@@ -33,7 +32,7 @@ export default {
 				use : ["style-loader", "css-loader"],
 			},
 			{
-				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				test: /\.(png|svg|jpg|jpeg|gif|jfif)$/i,
 				type: "asset/resource",
 			},
 		],

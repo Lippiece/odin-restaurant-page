@@ -1,15 +1,17 @@
-import "./style.css";
-import imageSource from "./main.jfif";
-const content = document.querySelector( "#content" );
+import { css } from "@emotion/css";
+import mainImageSource from "./main.jfif";
+import replaceWithFirstTab from "../firstTab/script.js";
+const content = document.querySelector( "#content" ),
+	contentStyle = css( { margin: "0 20vw" } );
 
+export default content;
 function makeImage()
 {
 	const image = document.createElement( "img" ),
 		imageWrapper = document.createElement( "abbr" );
 
 	imageWrapper.title = "Unsplash: @picturesbyalbert";
-	image.src          = imageSource;
-	image.name         = "Unsplash: @picturesbyalbert";
+	image.src          = mainImageSource;
 	image.alt          = "Image of a restaurant";
 	image.style.width  = "400px";
 	imageWrapper.append( image );
@@ -21,26 +23,33 @@ function makeButton()
 	const button = document.createElement( "button" );
 
 	button.textContent = "Tab1";
+	button.addEventListener( "click", () =>
+	{
+		replaceWithFirstTab();
+		// import "style.css";
+	} );
 
 	return button;
 }
 function makeInitialElements()
 {
 	// Image, headline para about the restaurant
-	const para = document.createElement( "p" ),
-		headline = document.createElement( "h1" );
+	const paragraph = document.createElement( "p" ),
+		headline = document.createElement( "h1" ),
+		paraStyle = css( { color: "green" } );
 
-	para.textContent     = "The pain itself is pain, it loves the main adipisicing process. As there is no such thing as none of our present, nor do we foresee the pain of the inventor, and for a similar reason, we are obliged to deem it. I'll explain it by flattering myself but not too harsh.";
-	headline.textContent = "The Phylosophy Ingredient";
+	headline.textContent  = "The Phylosophy Ingredient";
+	paragraph.textContent = "The pain itself is pain, it loves the main adipisicing process. As there is no such thing as none of our present, nor do we foresee the pain of the inventor, and for a similar reason, we are obliged to deem it. I'll explain it by flattering myself but not too harsh.";
+	paragraph.classList.add( paraStyle );
 
 	return [
 		headline,
-		para,
+		paragraph,
 	];
 }
-const elements = makeInitialElements(),
-	image  = makeImage(),
-	button = makeButton(),
+const 	image = makeImage(),
+	button  = makeButton(),
 	theRest = makeInitialElements();
 
-content.append(  button,image, theRest[0], theRest[1] );
+content.append( button, image, theRest[0], theRest[1] );
+content.classList.add( contentStyle );

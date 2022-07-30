@@ -1,24 +1,14 @@
+import { css } from "@emotion/css";
 const content = document.querySelector( "#content" );
 
-function makeInitialElements()
+export default function replaceWithFirstTab()
 {
-	// Image, headline para about the restaurant
-	const para = document.createElement( "p" ),
-		headline = document.createElement( "h1" );
+	const paragraph = document.createElement( "p" ),
+		style = css`
+		color:red;
+		`;
 
-	para.textContent     = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, quis totam eum cum corporis at? Aliquid, adipisci quaerat nemo explicabo odit, officia nisi numquam repudiandae, ipsum obcaecati repellat asperiores impedit.";
-	headline.textContent = "The Phylosophy Ingredient";
-
-	return {
-		headline,
-		para,
-	};
-}
-const elements = makeInitialElements();
-
-for ( const key in elements )
-{
-	const element = elements[key];
-
-	content.append( element );
+	paragraph.textContent = "And by that, who would look at him as a whole with his body? He seeks to gain something, no one hates to explain it, but his duties are never to be repudiated; Home And by that, who would look at him as a whole with his body? He seeks to gain something, no one hates to explain it, but his duties are never to be repudiated; Home And by that, who would look at him as a whole with his body? He seeks to gain something, no one hates to explain it, but his duties are never to be repudiated; Home And by that, who would look at him as a whole with his body? Someone wants to get something that no one hates to explain, but never repudiate their responsibilities;";
+	paragraph.classList.add( style );
+	content.replaceChildren( paragraph );
 }

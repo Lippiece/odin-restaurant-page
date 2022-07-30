@@ -1,9 +1,0 @@
-@import "https://meyerweb.com/eric/tools/css/reset/reset.css";
-
-body {
-	font-family: Rubik, "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-body > * {
-	font-family: inherit;
-}

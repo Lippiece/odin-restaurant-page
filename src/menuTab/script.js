@@ -39,3 +39,16 @@ function makeFoodGrid()
 
 	return foodBlocks;
 }
+function makeFoodBlock()
+{
+	const foodBlock = document.createElement( "div" );
+
+	foodBlock.classList.add( css( {
+		backgroundColor: "lightblue",
+		padding        : "20px",
+		margin         : "20px",
+		borderRadius   : "10px",
+	} ) );
+
+	return foodBlock;
+}

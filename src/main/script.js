@@ -3,7 +3,8 @@ import mainImageSource from "./main.jfif";
 import replaceWithMenu from "../menuTab/script.js";
 import replaceWithContacts from "../contactsTab/script.js";
 const content = document.querySelector( "#content" ),
-	contentStyle = css( { margin: "0 20vw" } );
+	main = document.querySelector( "main" ),
+	mainStyle = css( { margin: "0 20vw" } );
 
 export default content;
 function makeImage()
@@ -48,9 +49,4 @@ function makeInitialElements()
 		paragraph,
 	];
 }
-const 	image = makeImage(),
-	button  = makeButton(),
-	theRest = makeInitialElements();
-
-content.append( button, image, theRest[0], theRest[1] );
-content.classList.add( contentStyle );
+main.classList.add( mainStyle );

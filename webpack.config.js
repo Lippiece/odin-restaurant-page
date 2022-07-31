@@ -15,7 +15,8 @@ export default {
 			templateContent: `
     <html>
       <body>
-        <div id="content">
+        <div id="content"></div>
+				<main></main>
       </body>
     </html>
   `,

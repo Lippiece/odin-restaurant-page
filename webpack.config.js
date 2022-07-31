@@ -6,7 +6,8 @@ import HtmlWebpackPlugin from  "html-webpack-plugin" ;
 export default {
 	entry    : glob.sync( "./src/**/*.js" ),
 	// Entry    : "/src/main/script.js",
-	devtool  : "eval",
+	mode     : "production",
+	devtool  : "source-map",
 	devServer: { static: "./dist" },
 	plugins  : [
 		new HtmlWebpackPlugin( {

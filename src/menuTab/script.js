@@ -17,4 +17,25 @@ const main = document.querySelector( "main" ),
 		objectPosition: "center",
 	} );
 
+/**
+ * Create a grid of food blocks, each of which contains a food image, a food name, and a food
+ * description.
+ *
+ * Create a div. Give it a CSS class that makes it a grid with a width from 300px
+ * to 1fr. The grid has a gap of 20px between each food block.
+ * @returns A function that returns a div with a class of foodBlocks.
+ */
+function makeFoodGrid()
+{
+	const foodBlocks = document.createElement( "div" );
 
+	foodBlocks.classList.add( css( {
+		display            : "grid",
+		gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+		gridGap            : "20px",
+		margin             : "20px",
+	} ) );
+	for ( let index = 0; index < 8; index++ )
+
+	return foodBlocks;
+}

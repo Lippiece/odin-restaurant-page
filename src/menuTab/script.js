@@ -36,6 +36,9 @@ function makeFoodGrid()
 		margin             : "20px",
 	} ) );
 	for ( let index = 0; index < 8; index++ )
+	{
+		fillFoodGrid( foodBlocks, index );
+	}
 
 	return foodBlocks;
 }
@@ -51,4 +54,31 @@ function makeFoodBlock()
 	} ) );
 
 	return foodBlock;
+}
+function makeFoodBlockHeadline( index )
+{
+	const foodBlockHeadline = document.createElement( "h2" );
+
+	foodBlockHeadline.textContent = `Food ${ index }`;
+
+	return foodBlockHeadline;
+}
+function makeFoodBlockImage( index )
+{
+	const foodBlockImage = document.createElement( "img" );
+
+	foodBlockImage.src = sources[index];
+	foodBlockImage.alt = "Food image";
+	foodBlockImage.classList.add( foodImageStyle );
+
+	return foodBlockImage;
+}
+function fillFoodGrid( foodBlocks, index )
+{
+	const foodBlock = makeFoodBlock(),
+		foodBlockHeadline = makeFoodBlockHeadline( index ),
+		foodBlockImage = makeFoodBlockImage( index );
+
+	foodBlock.append( foodBlockHeadline, foodBlockImage );
+	foodBlocks.append( foodBlock );
 }

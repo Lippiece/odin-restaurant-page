@@ -1,6 +1,7 @@
 import { css } from "@emotion/css";
 import mainImageSource from "./main.jfif";
-import replaceWithFirstTab from "../firstTab/script.js";
+import replaceWithMenu from "../menuTab/script.js";
+import replaceWithContacts from "../contactsTab/script.js";
 const content = document.querySelector( "#content" ),
 	contentStyle = css( { margin: "0 20vw" } );
 

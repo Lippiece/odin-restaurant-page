@@ -82,3 +82,7 @@ function fillFoodGrid( foodBlocks, index )
 	foodBlock.append( foodBlockHeadline, foodBlockImage );
 	foodBlocks.append( foodBlock );
 }
+export default function replaceWithMenu()
+{
+	main.replaceChildren( makeFoodGrid() );
+}

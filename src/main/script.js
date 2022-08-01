@@ -3,13 +3,14 @@ import mainImageSource from "./main.jfif";
 import replaceWithMenu from "../menuTab/script.js";
 import replaceWithContacts from "../contactsTab/script.js";
 const content = document.querySelector( "#content" ),
+	body = document.querySelector( "body" ),
 	main = document.querySelector( "main" ),
 	mainStyle = css( { margin: "0 20vw" } ),
-	contentStyle = css( {
+	bodyStyle = css( {
 		fontFamily     : "Rubik",
 		backgroundColor: "#222",
 		color          : "f63",
-		height         : "100%",
+		height         : "100vh",
 	} );
 
 /* Creating an image element and appending it to a wrapper element. */
@@ -96,6 +97,6 @@ function makeMainContent()
 	return container;
 }
 content.prepend( makeNavbar() );
-content.classList.add( contentStyle );
+body.classList.add( bodyStyle );
 main.append( makeMainContent() );
 main.classList.add( mainStyle );

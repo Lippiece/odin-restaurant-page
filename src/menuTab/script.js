@@ -57,9 +57,11 @@ function makeFoodBlock()
 }
 function makeFoodBlockHeadline( index )
 {
-	const foodBlockHeadline = document.createElement( "h2" );
+	const foodBlockHeadline = document.createElement( "h2" ),
+		style = css( { opacity: 0.8 } );
 
 	foodBlockHeadline.textContent = `Food ${ index }`;
+	foodBlockHeadline.classList.add( style );
 
 	return foodBlockHeadline;
 }

@@ -61,7 +61,7 @@ class Button
 function makeNavbar()
 {
 	const navbar = document.createElement( "nav" ),
-		_homeButton = new Button( "Home", () => { replaceWithMenu() },  navbar ),
+		_homeButton = new Button( "Home", () => { main.replaceChildren( makeMainContent() ) },  navbar ),
 		_menuButton = new Button( "Menu", () => { replaceWithMenu() },  navbar ),
 		_contactsButton = new Button( "Contacts", () => { replaceWithContacts() },  navbar ),
 		navbarStyle = css( {

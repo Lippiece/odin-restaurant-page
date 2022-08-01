@@ -14,6 +14,9 @@ export default {
 			title          : "The Phylosophy Ingredient",
 			templateContent: `
     <html>
+			<head>
+				<link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css" />
+			</head>
       <body>
         <div id="content"></div>
 				<main></main>

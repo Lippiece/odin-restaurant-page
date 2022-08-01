@@ -47,7 +47,7 @@ function makeFoodBlock()
 	const foodBlock = document.createElement( "div" );
 
 	foodBlock.classList.add( css( {
-		backgroundColor: "lightblue",
+		backgroundColor: "#444",
 		padding        : "20px",
 		margin         : "20px",
 		borderRadius   : "10px",
@@ -58,7 +58,10 @@ function makeFoodBlock()
 function makeFoodBlockHeadline( index )
 {
 	const foodBlockHeadline = document.createElement( "h2" ),
-		style = css( { opacity: 0.8 } );
+		style = css( {
+			opacity : 0.8,
+			fontSize: "1.5rem",
+		} );
 
 	foodBlockHeadline.textContent = `Food ${ index }`;
 	foodBlockHeadline.classList.add( style );

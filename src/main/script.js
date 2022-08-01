@@ -66,9 +66,12 @@ function makeNavbar()
 		_contactsButton = new Button( "Contacts", () => { replaceWithContacts() },  navbar ),
 		navbarStyle = css( {
 			backgroundColor: "#444",
-			border         : "none",
-			padding        : "10px",
+			borderRadius 	 : "0 0 1em 1em",
+			padding        : "10px 15em",
 			margin         : "0 10px 10px 10px",
+			display        : "flex",
+			justifyContent : "space-between",
+			alignItems     : "center",
 		} );
 
 	navbar.classList.add( navbarStyle );

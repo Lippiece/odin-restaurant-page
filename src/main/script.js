@@ -4,7 +4,13 @@ import replaceWithMenu from "../menuTab/script.js";
 import replaceWithContacts from "../contactsTab/script.js";
 const content = document.querySelector( "#content" ),
 	main = document.querySelector( "main" ),
-	mainStyle = css( { margin: "0 20vw" } );
+	mainStyle = css( { margin: "0 20vw" } ),
+	contentStyle = css( {
+		fontFamily     : "Rubik",
+		backgroundColor: "#222",
+		color          : "f63",
+		height         : "100%",
+	} );
 
 /* Creating an image element and appending it to a wrapper element. */
 function makeImage()
@@ -27,12 +33,11 @@ function makeNavbar()
 		homeButton = document.createElement( "button" ),
 		menuTab = document.createElement( "button" ),
 		contactsTab = document.createElement( "button" ),
-		menuTabStyle = css( {
-			backgroundColor: "green",
-			color          : "white",
+		navbarStyle = css( {
+			backgroundColor: "#444",
 			border         : "none",
 			padding        : "10px",
-			margin         : "10px",
+			margin         : "0 10px 10px 10px",
 		} );
 
 	// Home button
@@ -50,7 +55,7 @@ function makeNavbar()
 	contactsTab.addEventListener( "click", () =>
 	{ replaceWithContacts() } );
 	navbar.append( contactsTab );
-	navbar.classList.add( menuTabStyle );
+	navbar.classList.add( navbarStyle );
 
 	return navbar;
 }
@@ -60,15 +65,22 @@ function makeMainContent()
 	const	container = document.createElement( "div" ),
 		paragraph = document.createElement( "p" ),
 		headline = document.createElement( "h1" ),
-		paraStyle = css( { color: "green" } );
+		headlineStyle = css( {
+			fontSize: "2.5rem",
+			margin  : "0 0 10px 0",
+			opacity : 0.8,
+		} ),
+		paraStyle = css( { opacity: 0.8 } );
 
-	headline.textContent  = "\"The Phylosophy Ingredient\" restaurant";
+	headline.textContent = "\"The Phylosophy Ingredient\" restaurant";
+	headline.classList.add( headlineStyle );
 	paragraph.textContent = "The pain itself is pain, it loves the container adipisicing process. As there is no such thing as none of our present, nor do we foresee the pain of the inventor, and for a similar reason, we are obliged to deem it. I'll explain it by flattering myself but not too harsh.";
 	paragraph.classList.add( paraStyle );
 	container.append( makeImage(), headline, paragraph );
 
 	return container;
 }
-content.append( makeNavbar() );
+content.prepend( makeNavbar() );
+content.classList.add( contentStyle );
 main.append( makeMainContent() );
 main.classList.add( mainStyle );

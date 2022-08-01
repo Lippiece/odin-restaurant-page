@@ -26,13 +26,43 @@ function makeImage()
 
 	return imageWrapper;
 }
-/* Creating a navbar with two buttons. */
+/*
+ * This class creates a button element with the given text, adds an event listener to it, and appends
+ * it to the given container.
+ */
+class Button
+{
+	constructor( text, listener, container )
+	{
+		const buttonStyle = css( {
+			backgroundColor: "#444",
+			color          : "f63",
+			border         : "none",
+			padding        : "10px",
+			fontSize       : "1.5rem",
+			cursor         : "pointer",
+			opacity        : 0.8,
+			transition     : "all 0.3s ease-in-out",
+			"&:hover"      : {
+				opacity  : 1,
+				transform: "scale(1.1)",
+			},
+		} );
+
+		this.button             = document.createElement( "button" );
+		this.button.textContent = text;
+		this.button.addEventListener( "click", listener );
+		this.button.classList.add( buttonStyle );
+		container.append( this.button );
+	}
+}
+/* Creating a navbar with buttons. */
 function makeNavbar()
 {
 	const navbar = document.createElement( "nav" ),
-		homeButton = document.createElement( "button" ),
-		menuTab = document.createElement( "button" ),
-		contactsTab = document.createElement( "button" ),
+		_homeButton = new Button( "Home", () => { replaceWithMenu() },  navbar ),
+		_menuButton = new Button( "Menu", () => { replaceWithMenu() },  navbar ),
+		_contactsButton = new Button( "Contacts", () => { replaceWithContacts() },  navbar ),
 		navbarStyle = css( {
 			backgroundColor: "#444",
 			border         : "none",
@@ -40,21 +70,6 @@ function makeNavbar()
 			margin         : "0 10px 10px 10px",
 		} );
 
-	// Home button
-	homeButton.textContent = "Home";
-	homeButton.addEventListener( "click", () =>
-	{ main.replaceChildren( makeMainContent() ) } );
-	navbar.append( homeButton );
-	// Menu tab
-	menuTab.textContent = "Menu";
-	menuTab.addEventListener( "click", () =>
-	{ replaceWithMenu() } );
-	navbar.append( menuTab );
-	// Contacts tab
-	contactsTab.textContent = "Contacts";
-	contactsTab.addEventListener( "click", () =>
-	{ replaceWithContacts() } );
-	navbar.append( contactsTab );
 	navbar.classList.add( navbarStyle );
 
 	return navbar;

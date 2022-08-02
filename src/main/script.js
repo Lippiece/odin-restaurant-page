@@ -13,20 +13,6 @@ const content = document.querySelector( "#content" ),
 		height         : "100vh",
 	} );
 
-/* Creating an image element and appending it to a wrapper element. */
-function makeImage()
-{
-	const image = document.createElement( "img" ),
-		imageWrapper = document.createElement( "abbr" );
-
-	imageWrapper.title = "Unsplash: @picturesbyalbert";
-	image.src          = mainImageSource;
-	image.alt          = "Image of a restaurant";
-	image.style.width  = "400px";
-	imageWrapper.append( image );
-
-	return imageWrapper;
-}
 /*
  * This class creates a button element with the given text, adds an event listener to it, and appends
  * it to the given container.
@@ -84,18 +70,28 @@ function makeMainContent()
 	const	container = document.createElement( "div" ),
 		paragraph = document.createElement( "p" ),
 		headline = document.createElement( "h1" ),
+		containerStyle = css( {
+			backgroundColor: "rgba(255,255,255,0.1)",
+			backgroundImage: `url(${ mainImageSource })`,
+			backgroundSize : "cover",
+		} ),
 		headlineStyle = css( {
-			fontSize: "2.5rem",
+			fontSize: "5rem",
 			margin  : "0 0 10px 0",
 			opacity : 0.8,
 		} ),
-		paraStyle = css( { opacity: 0.8 } );
+		paraStyle = css( {
+			fontSize: "4rem",
+			// opacity : 0.2,
+			color   : "rgba( 0, 0, 0, .4 )",
+		} );
 
 	headline.textContent = "\"The Phylosophy Ingredient\" restaurant";
 	headline.classList.add( headlineStyle );
 	paragraph.textContent = "The pain itself is pain, it loves the container adipisicing process. As there is no such thing as none of our present, nor do we foresee the pain of the inventor, and for a similar reason, we are obliged to deem it. I'll explain it by flattering myself but not too harsh.";
 	paragraph.classList.add( paraStyle );
-	container.append( makeImage(), headline, paragraph );
+	container.classList.add( containerStyle );
+	container.append( headline, paragraph );
 
 	return container;
 }

@@ -13,6 +13,7 @@ const content = document.querySelector( "#content" ),
 		"@media (min-width: 800px)" : { margin: "0 15vw" },
 		"@media (min-width: 1000px)": { margin: "0 20vw" },
 		"@media (min-width: 1200px)": { margin: "0 25vw" },
+		position                   	: "relative",
 	} ),
 	bodyStyle = css( {
 		fontFamily     : "Rubik",
@@ -21,10 +22,8 @@ const content = document.querySelector( "#content" ),
 		height         : "100vh",
 	} );
 
-/*
- * This class creates a button element with the given text, adds an event listener to it, and appends
- * it to the given container.
- */
+/* This class creates a button element with the given text, adds an event listener to it, and appends
+   it to the given container. */
 class Button
 {
 	constructor( text, listener, container )
@@ -37,7 +36,7 @@ class Button
 			fontSize       : "1.5rem",
 			cursor         : "pointer",
 			opacity        : 0.8,
-			transition     : "all 0.3s ease-in-out",
+			transition     : "all 0.1s ease-in-out",
 			"&:hover"      : {
 				opacity  : 1,
 				transform: "scale(1.1)",
@@ -79,24 +78,44 @@ function makeMainContent()
 		paragraph = document.createElement( "p" ),
 		headline = document.createElement( "h1" ),
 		containerStyle = css( {
-			backgroundColor: "rgba(255,255,255,0.1)",
-			backgroundImage: `url(${ mainImageSource })`,
-			backgroundSize : "cover",
+			position           : "relative",
+			backgroundColor    : "rgba(255,255,255,0.1)",
+			backgroundImage    : `url(${ mainImageSource })`,
+			backgroundSize     : "cover",
+			backgroundClip     : "text",
+			backgroundBlendMode: "multiply",
+			"&::before"        : {
+				backgroundImage: `url(${ mainImageSource })`,
+				backgroundSize : "cover",
+				position       : "absolute",
+				top            : "0px",
+				right          : "0px",
+				bottom         : "0px",
+				left           : "0px",
+				opacity        : "0.4",
+				content      		: "''",
+			 },
+
 		} ),
 		headlineStyle = css( {
-			fontSize: "5rem",
-			margin  : "0 0 10px 0",
-			opacity : 0.8,
+			fontSize     : "4em",
+			fontWeight   : "bold",
+			margin       : "0 0 10px 0",
+			opacity      : 0.75,
+			letterSpacing: "0.2em",
 		} ),
 		paraStyle = css( {
-			fontSize: "4rem",
-			// opacity : 0.2,
-			color   : "rgba( 0, 0, 0, .4 )",
+			fontSize           : "4em",
+			backgroundSize     : "cover",
+			backgroundBlendMode: "multiply",
+			// fontWeight         : "bold",
+			color              : "rgba( 0, 0, 0, 0 )",
 		} );
 
 	headline.textContent = "\"The Phylosophy Ingredient\" restaurant";
 	headline.classList.add( headlineStyle );
-	paragraph.textContent = "The pain itself is pain, it loves the container adipisicing process. As there is no such thing as none of our present, nor do we foresee the pain of the inventor, and for a similar reason, we are obliged to deem it. I'll explain it by flattering myself but not too harsh.";
+	paragraph.textContent
+		= "Quiet peaceful place. Good service and very tasty food with terrific serving. A place where food is like a work of art.";
 	paragraph.classList.add( paraStyle );
 	container.classList.add( containerStyle );
 	container.append( headline, paragraph );

@@ -5,7 +5,15 @@ import replaceWithContacts from "../contactsTab/script.js";
 const content = document.querySelector( "#content" ),
 	body = document.querySelector( "body" ),
 	main = document.querySelector( "main" ),
-	mainStyle = css( { margin: "0 20vw" } ),
+	// Dynamic width based on screen size
+	mainStyle = css( {
+		"@media (max-width: 500px)" : { margin: "0 2vw" },
+		"@media (min-width: 500px)" : { margin: "0 5vw" },
+		"@media (min-width: 600px)" : { margin: "0 10vw" },
+		"@media (min-width: 800px)" : { margin: "0 15vw" },
+		"@media (min-width: 1000px)": { margin: "0 20vw" },
+		"@media (min-width: 1200px)": { margin: "0 25vw" },
+	} ),
 	bodyStyle = css( {
 		fontFamily     : "Rubik",
 		backgroundColor: "#222",

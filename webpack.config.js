@@ -4,12 +4,11 @@ import glob from "glob";
 import HtmlWebpackPlugin from  "html-webpack-plugin" ;
 
 export default {
-	entry    : glob.sync( "./src/**/*.js" ),
+	entry  : glob.sync( "./src/**/*.js" ),
 	// Entry    : "/src/main/script.js",
-	mode     : "development",
-	devtool  : "source-map",
-	devServer: { static: "./dist" },
-	plugins  : [
+	mode   : "production",
+	devtool: "source-map",
+	plugins: [
 		new HtmlWebpackPlugin( {
 			title          : "The Phylosophy Ingredient",
 			templateContent: `
@@ -43,5 +42,11 @@ export default {
 				type: "asset/resource",
 			},
 		],
+	},
+	devServer: {
+		static  : { directory: "./dist" },
+		compress: true,
+		port    : 9000,
+		host    : "localhost",
 	},
 };

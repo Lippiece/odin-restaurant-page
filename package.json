@@ -5,7 +5,8 @@
 	"private": "true",
 	"scripts": {
 		"setup": "mkdir src dist && cd src && touch index.js style.css && cd .. && touch webpack.config.js .gitignore && npm i -D webpack webpack-cli webpack-dev-server html-webpack-plugin style-loader css-loader",
-		"build": "webpack --watch"
+		"build": "webpack --watch",
+		"serve": "webpack serve"
 	},
 	"repository": {
 		"type": "git",

@@ -95,7 +95,6 @@ function makeMainContent()
 				opacity        : "0.4",
 				content      		: "''",
 			 },
-
 		} ),
 		headlineStyle = css( {
 			fontSize     : "4em",
@@ -108,7 +107,6 @@ function makeMainContent()
 			fontSize           : "4em",
 			backgroundSize     : "cover",
 			backgroundBlendMode: "multiply",
-			// fontWeight         : "bold",
 			color              : "rgba( 0, 0, 0, 0 )",
 		} );
 

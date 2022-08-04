@@ -1,4 +1,4 @@
-# My take ([see it](https://lippiece.github.io/odin-restaurant-page/)) on The Odin Project's [Restaraunt page](theodinproject.com/lessons/node-path-javascript-restaurant-page)
+# My take ([see it](https://lippiece.github.io/odin-restaurant-page/)) on The Odin Project's [Restaurant page](theodinproject.com/lessons/node-path-javascript-restaurant-page)
 ## Skills/tools used
 ### App building
 - Webpack
